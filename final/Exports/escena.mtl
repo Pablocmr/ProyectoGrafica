@@ -1,0 +1,196 @@
+newmtl LavadoraFinal:lambert2SG
+illum 4
+Kd 0.40 0.46 0.41
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl LavadoraFinal:lambert3SG
+illum 4
+Kd 0.26 0.30 0.27
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl LavadoraFinal:lambert4SG
+illum 4
+Kd 0.26 0.30 0.27
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl LavadoraFinal:lambert6SG
+illum 4
+Kd 0.49 0.57 0.52
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl LavadoraFinal1:lambert2SG
+illum 4
+Kd 0.40 0.46 0.41
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl LavadoraFinal1:lambert3SG
+illum 4
+Kd 0.26 0.30 0.27
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl LavadoraFinal1:lambert4SG
+illum 4
+Kd 0.26 0.30 0.27
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl LavadoraFinal1:lambert6SG
+illum 4
+Kd 0.49 0.57 0.52
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl LavadoraFinal2:lambert2SG
+illum 4
+Kd 0.40 0.46 0.41
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl LavadoraFinal2:lambert3SG
+illum 4
+Kd 0.26 0.30 0.27
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl LavadoraFinal2:lambert4SG
+illum 4
+Kd 0.26 0.30 0.27
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl LavadoraFinal2:lambert6SG
+illum 4
+Kd 0.49 0.57 0.52
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl LavadoraFinal3:lambert2SG
+illum 4
+Kd 0.40 0.46 0.41
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl LavadoraFinal3:lambert3SG
+illum 4
+Kd 0.26 0.30 0.27
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl LavadoraFinal3:lambert4SG
+illum 4
+Kd 0.26 0.30 0.27
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl LavadoraFinal3:lambert6SG
+illum 4
+Kd 0.49 0.57 0.52
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl Paredes:lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.71 0.71 0.71
+Tf 1.00 1.00 1.00
+map_Kd -o 1 0 -s 0.333333 0.333333 -t 0.04 0.01 wall1.JPG
+Ni 1.00
+newmtl Paredes:lambert3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.55 0.55 0.55
+Tf 1.00 1.00 1.00
+map_Kd -s 0.333333 0.333333 -t 0.01 0.01 wall2.JPG
+Ni 1.00
+newmtl Paredes:lambert5SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.55 0.55 0.55
+Tf 1.00 1.00 1.00
+map_Kd -o 10 0 -s 0.333333 0.333333 -clamp off wall3.JPG
+Ni 1.00
+newmtl Paredes:lambert6SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.53 0.53 0.53
+Tf 1.00 1.00 1.00
+map_Kd -s 0.25 0.25 -t 0.01 0.01 wall4.JPG
+Ni 1.00
+newmtl Paredes:lambert7SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd -s 0.25 0.333333 -t 0.001 0.001 leftWall.JPG
+Ni 1.00
+newmtl Paredes:pasted__lambert7SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd -s 0.25 0.333333 -t 0.001 0.001 leftWall.JPG
+Ni 1.00
+newmtl Paredes1:lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.71 0.71 0.71
+Tf 1.00 1.00 1.00
+map_Kd -o 1 0 -s 0.333333 0.333333 -t 0.04 0.01 wall1.JPG
+Ni 1.00
+newmtl Paredes1:lambert3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.55 0.55 0.55
+Tf 1.00 1.00 1.00
+map_Kd -s 0.333333 0.333333 -t 0.01 0.01 wall2.JPG
+Ni 1.00
+newmtl Paredes1:lambert5SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.55 0.55 0.55
+Tf 1.00 1.00 1.00
+map_Kd -o 10 0 -s 0.333333 0.333333 -clamp off wall3.JPG
+Ni 1.00
+newmtl Paredes1:lambert6SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.53 0.53 0.53
+Tf 1.00 1.00 1.00
+map_Kd -s 0.25 0.25 -t 0.01 0.01 wall4.JPG
+Ni 1.00
+newmtl initialShadingGroup
+illum 4
+Kd 0.47 0.47 0.39
+Ka 0.17 0.17 0.17
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl relojAspas:lambert3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl relojAspas:lambert4SG
+illum 4
+Kd 0.03 0.03 0.03
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl relojAspas:lambert7SG
+illum 4
+Kd 1.00 0.98 0.88
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl relojAspas:lambert8SG
+illum 4
+Kd 0.35 0.41 0.40
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
