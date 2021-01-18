@@ -94,6 +94,30 @@ Kd 0.49 0.57 0.52
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
 Ni 1.00
+newmtl LavadoraFinal4:lambert2SG
+illum 4
+Kd 0.40 0.46 0.41
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl LavadoraFinal4:lambert3SG
+illum 4
+Kd 0.26 0.30 0.27
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl LavadoraFinal4:lambert4SG
+illum 4
+Kd 0.26 0.30 0.27
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl LavadoraFinal4:lambert6SG
+illum 4
+Kd 0.49 0.57 0.52
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
 newmtl Paredes:lambert2SG
 illum 4
 Kd 0.00 0.00 0.00
@@ -170,6 +194,271 @@ Kd 0.47 0.47 0.39
 Ka 0.17 0.17 0.17
 Tf 1.00 1.00 1.00
 Ni 1.00
+newmtl lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.54 0.54 0.54
+Tf 1.00 1.00 1.00
+map_Kd estante.png
+Ni 1.00
+newmtl lavabo:lambert3SG
+illum 4
+Kd 0.46 0.54 0.49
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lavabo:lambert4SG
+illum 4
+Kd 0.32 0.38 0.34
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lavabo:lambert5SG
+illum 4
+Kd 0.36 0.42 0.38
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lavabo:pasted__lambert2SG
+illum 4
+Kd 0.13 0.12 0.10
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lavabo:pasted__pasted__lambert2SG1
+illum 4
+Kd 0.13 0.12 0.10
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lavabo:pasted__pasted__lambert2SG2
+illum 4
+Kd 0.13 0.12 0.10
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lavabo:pasted__pasted__lambert2SG3
+illum 4
+Kd 0.13 0.12 0.10
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lavabo:pasted__pasted__lambert2SG4
+illum 4
+Kd 0.49 0.47 0.38
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lavabo:pasted__pasted__lambert2SG5
+illum 4
+Kd 0.13 0.12 0.10
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lavabo:pasted__pasted__pasted__lambert2SG4
+illum 4
+Kd 0.13 0.12 0.10
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lavabo:pasted__pasted__pasted__lambert2SG5
+illum 4
+Kd 0.13 0.12 0.10
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lavabo:pasted__pasted__pasted__lambert2SG6
+illum 4
+Kd 0.13 0.12 0.10
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lavabo:pasted__pasted__pasted__lambert2SG7
+illum 4
+Kd 0.13 0.12 0.10
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lavabo:pasted__pasted__pasted__lambert2SG8
+illum 4
+Kd 0.13 0.12 0.10
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lavabo:pasted__pasted__pasted__pasted__pasted__lambert2SG8
+illum 4
+Kd 0.49 0.47 0.38
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lavabo:pasted__pasted__pasted__pasted__pasted__pasted__lambert2SG8
+illum 4
+Kd 0.49 0.47 0.38
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lavabo:pasted__pasted__pasted__pasted__pasted__pasted__lambert2SG9
+illum 4
+Kd 0.49 0.47 0.38
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lavabo:pasted__pasted__pasted__pasted__pasted__pasted__lambert2SG10
+illum 4
+Kd 0.49 0.47 0.38
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lavabo:pasted__pasted__pasted__pasted__pasted__pasted__pasted__lambert2SG9
+illum 4
+Kd 0.49 0.47 0.38
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl matraz:bifrostLiquidMaterial1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 0.00
+newmtl matraz:lambert2SG
+illum 4
+Kd 0.38 0.38 0.38
+Ka 0.00 0.00 0.00
+Tf 0.53 0.53 0.53
+Ni 1.00
+newmtl matraz:lambert3SG
+illum 4
+Kd 0.11 0.07 0.07
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl matraz:lambert4SG
+illum 4
+Kd 0.71 0.69 0.48
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl matraz:lambert5SG
+illum 4
+Kd 0.02 0.13 0.08
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl matraz:lambert6SG
+illum 4
+Kd 0.22 0.69 0.32
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl matraz:lambert7SG
+illum 4
+Kd 0.11 0.11 0.11
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl matraz:pasted__bifrostLiquidMaterial1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 0.00
+newmtl matraz:pasted__lambert2SG
+illum 4
+Kd 0.38 0.38 0.38
+Ka 0.00 0.00 0.00
+Tf 0.53 0.53 0.53
+Ni 1.00
+newmtl matraz:pasted__lambert3SG
+illum 4
+Kd 0.11 0.07 0.07
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl mesa:lambert2SG
+illum 4
+Kd 0.04 0.06 0.10
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl mesa:lambert3SG
+illum 4
+Kd 0.85 0.85 0.85
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl mesa:lambert4SG
+illum 4
+Kd 0.28 0.21 0.18
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl mesa:lambert5SG
+illum 4
+Kd 0.14 0.17 0.19
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl mesa:pasted__lambert3SG1
+illum 4
+Kd 0.85 0.85 0.85
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl mesa:pasted__lambert3SG2
+illum 4
+Kd 0.85 0.85 0.85
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl mesa:pasted__lambert3SG3
+illum 4
+Kd 0.85 0.85 0.85
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl mesa:pasted__pasted__lambert3SG1
+illum 4
+Kd 0.85 0.85 0.85
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl mesa:pasted__pasted__lambert3SG3
+illum 4
+Kd 0.85 0.85 0.85
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl mesa:pasted__pasted__pasted__lambert3SG3
+illum 4
+Kd 0.85 0.85 0.85
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl mesa:pasted__pasted__pasted__lambert3SG4
+illum 4
+Kd 0.85 0.85 0.85
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl mesa:pasted__pasted__pasted__lambert3SG5
+illum 4
+Kd 0.85 0.85 0.85
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl mesa:pasted__pasted__pasted__pasted__lambert3SG4
+illum 4
+Kd 0.85 0.85 0.85
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl mesa:pasted__pasted__pasted__pasted__pasted__lambert3SG4
+illum 4
+Kd 0.85 0.85 0.85
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
 newmtl relojAspas:lambert3SG
 illum 4
 Kd 0.00 0.00 0.00
@@ -191,6 +480,43 @@ Ni 1.00
 newmtl relojAspas:lambert8SG
 illum 4
 Kd 0.35 0.41 0.40
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl timeTravel:lambert2SG
+illum 4
+Kd 0.19 0.17 0.09
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl timeTravel:lambert3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd timetravel.JPG
+Ni 1.00
+newmtl timeTravel:lambert5SG
+illum 4
+Kd 0.50 0.50 0.24
+Ka 0.00 0.00 0.00
+Tf 0.26 0.26 0.26
+Ni 1.00
+newmtl timeTravel:lambert6SG
+illum 4
+Kd 0.21 0.71 0.38
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl timeTravel:lambert8SG
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl timeTravel:lambert10SG
+illum 4
+Kd 0.11 0.26 0.41
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
 Ni 1.00

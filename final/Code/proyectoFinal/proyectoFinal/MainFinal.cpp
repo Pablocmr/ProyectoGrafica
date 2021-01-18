@@ -190,7 +190,11 @@ int main()
 	Shader lampShader("Shaders/lamp.vs", "Shaders/lamp.frag");
 	Shader SkyBoxshader("Shaders/SkyBox.vs", "Shaders/SkyBox.frag");
 	Shader animShader("Shaders/anim.vs", "Shaders/anim.frag");
-
+	
+	
+	
+	Model Escena((char*)"Exports/escena.obj");
+	/*
 	Model BotaDer((char*)"Models/Personaje/bota.obj");
 	Model PiernaDer((char*)"Models/Personaje/piernader.obj");
 	Model PiernaIzq((char*)"Models/Personaje/piernaizq.obj");
@@ -198,6 +202,7 @@ int main()
 	Model BrazoDer((char*)"Models/Personaje/brazoder.obj");
 	Model BrazoIzq((char*)"Models/Personaje/brazoizq.obj");
 	Model Cabeza((char*)"Models/Personaje/cabeza.obj");
+	*/
 	// Build and compile our shader program
 
 	//Modelo de animación
@@ -432,7 +437,7 @@ int main()
 		// == ==========================
 		// Directional light
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.direction"), -0.2f, -1.0f, -0.3f);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"), 0.0f, 1.0f, 1.0f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"), 1.0f, 1.0f, 1.0f);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.diffuse"), 0.4f, 0.4f, 0.4f);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.specular"), 0.5f, 0.5f, 0.5f);
 
@@ -515,12 +520,19 @@ int main()
 		glBindVertexArray(VAO);
 		glm::mat4 tmp = glm::mat4(1.0f); //Temp
 
-
+		
 
 		//Carga de modelo 
 		//Personaje
 		view = camera.GetViewMatrix();
 		glm::mat4 model(1);
+		tmp = model = glm::translate(model, glm::vec3(0, 1, 0));
+		model = glm::translate(model, glm::vec3(posX, posY, posZ));
+		model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Escena.Draw(lightingShader);
+
+		/*
 		tmp = model = glm::translate(model, glm::vec3(0, 1, 0));
 		model = glm::translate(model,glm::vec3(posX,posY,posZ));
 		model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0));
@@ -580,7 +592,7 @@ int main()
 		model = glm::translate(model, glm::vec3(0.0f, 2.5f, 0));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Cabeza.Draw(lightingShader);
-
+		*/
 
 		glBindVertexArray(0);
 
