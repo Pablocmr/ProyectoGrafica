@@ -105,7 +105,7 @@ Ni 1.00
 newmtl lambert32SG
 illum 4
 Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
+Ka 0.17 0.17 0.17
 Tf 1.00 1.00 1.00
 map_Kd cafeLavabo.png
 Ni 1.00
@@ -143,6 +143,27 @@ Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
 map_Kd eye.jpg
+Ni 1.00
+newmtl lambert38SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd caja.png
+Ni 1.00
+newmtl lambert39SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.34 0.34 0.34
+Tf 1.00 1.00 1.00
+map_Kd amarilloMatraz.png
+Ni 1.00
+newmtl lambert40SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd verdeMatraz.png
 Ni 1.00
 newmtl matraz:bifrostLiquidMaterial1SG
 illum 4
