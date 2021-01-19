@@ -95,119 +95,33 @@ Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
 map_Kd wall4.JPG
 Ni 1.00
-newmtl lavabo:lambert3SG
+newmtl lambert31SG
 illum 4
-Kd 0.46 0.54 0.49
+Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
+Tf 0.25 0.25 0.25
+map_Kd cristalMatraz.png
 Ni 1.00
-newmtl lavabo:lambert4SG
+newmtl lambert32SG
 illum 4
-Kd 0.32 0.38 0.34
+Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
+map_Kd cafeLavabo.png
 Ni 1.00
-newmtl lavabo:lambert5SG
+newmtl lambert33SG
 illum 4
-Kd 0.36 0.42 0.38
+Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
+map_Kd verdeLavabo.png
 Ni 1.00
-newmtl lavabo:pasted__lambert2SG
+newmtl lambert34SG
 illum 4
-Kd 0.13 0.12 0.10
+Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-Ni 1.00
-newmtl lavabo:pasted__pasted__lambert2SG1
-illum 4
-Kd 0.13 0.12 0.10
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-Ni 1.00
-newmtl lavabo:pasted__pasted__lambert2SG2
-illum 4
-Kd 0.13 0.12 0.10
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-Ni 1.00
-newmtl lavabo:pasted__pasted__lambert2SG3
-illum 4
-Kd 0.13 0.12 0.10
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-Ni 1.00
-newmtl lavabo:pasted__pasted__lambert2SG4
-illum 4
-Kd 0.49 0.47 0.38
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-Ni 1.00
-newmtl lavabo:pasted__pasted__lambert2SG5
-illum 4
-Kd 0.13 0.12 0.10
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-Ni 1.00
-newmtl lavabo:pasted__pasted__pasted__lambert2SG4
-illum 4
-Kd 0.13 0.12 0.10
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-Ni 1.00
-newmtl lavabo:pasted__pasted__pasted__lambert2SG5
-illum 4
-Kd 0.13 0.12 0.10
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-Ni 1.00
-newmtl lavabo:pasted__pasted__pasted__lambert2SG6
-illum 4
-Kd 0.13 0.12 0.10
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-Ni 1.00
-newmtl lavabo:pasted__pasted__pasted__lambert2SG7
-illum 4
-Kd 0.13 0.12 0.10
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-Ni 1.00
-newmtl lavabo:pasted__pasted__pasted__lambert2SG8
-illum 4
-Kd 0.13 0.12 0.10
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-Ni 1.00
-newmtl lavabo:pasted__pasted__pasted__pasted__pasted__lambert2SG8
-illum 4
-Kd 0.49 0.47 0.38
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-Ni 1.00
-newmtl lavabo:pasted__pasted__pasted__pasted__pasted__pasted__lambert2SG8
-illum 4
-Kd 0.49 0.47 0.38
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-Ni 1.00
-newmtl lavabo:pasted__pasted__pasted__pasted__pasted__pasted__lambert2SG9
-illum 4
-Kd 0.49 0.47 0.38
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-Ni 1.00
-newmtl lavabo:pasted__pasted__pasted__pasted__pasted__pasted__lambert2SG10
-illum 4
-Kd 0.49 0.47 0.38
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-Ni 1.00
-newmtl lavabo:pasted__pasted__pasted__pasted__pasted__pasted__pasted__lambert2SG9
-illum 4
-Kd 0.49 0.47 0.38
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
+map_Kd cremaLavabo.png
 Ni 1.00
 newmtl matraz:bifrostLiquidMaterial1SG
 illum 4
