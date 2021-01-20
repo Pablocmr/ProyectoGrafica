@@ -99,7 +99,7 @@ newmtl lambert31SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
-Tf 0.25 0.25 0.25
+Tf 1.00 1.00 1.00
 map_Kd cristalMatraz.png
 Ni 1.00
 newmtl lambert32SG
@@ -309,6 +309,13 @@ Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
 map_Kd paredesClaro.png
 Ni 1.00
+newmtl pasted__lambert41SG3
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd paredesClaro.png
+Ni 1.00
 newmtl pasted__lambert42SG
 illum 4
 Kd 0.00 0.00 0.00
@@ -324,6 +331,111 @@ Tf 1.00 1.00 1.00
 map_Kd paredesMedio.png
 Ni 1.00
 newmtl pasted__lambert43SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd paredesOscuro.png
+Ni 1.00
+newmtl pasted__pasted__lambert41SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd paredesClaro.png
+Ni 1.00
+newmtl pasted__pasted__lambert41SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd paredesClaro.png
+Ni 1.00
+newmtl pasted__pasted__lambert41SG3
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd paredesClaro.png
+Ni 1.00
+newmtl pasted__pasted__lambert42SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd paredesMedio.png
+Ni 1.00
+newmtl pasted__pasted__lambert42SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd paredesMedio.png
+Ni 1.00
+newmtl pasted__pasted__lambert42SG3
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd paredesMedio.png
+Ni 1.00
+newmtl pasted__pasted__lambert43SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd paredesOscuro.png
+Ni 1.00
+newmtl pasted__pasted__lambert43SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd paredesOscuro.png
+Ni 1.00
+newmtl pasted__pasted__lambert43SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd paredesOscuro.png
+Ni 1.00
+newmtl pasted__pasted__pasted__lambert41SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd paredesClaro.png
+Ni 1.00
+newmtl pasted__pasted__pasted__lambert41SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd paredesClaro.png
+Ni 1.00
+newmtl pasted__pasted__pasted__lambert42SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd paredesMedio.png
+Ni 1.00
+newmtl pasted__pasted__pasted__lambert42SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd paredesMedio.png
+Ni 1.00
+newmtl pasted__pasted__pasted__lambert43SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd paredesOscuro.png
+Ni 1.00
+newmtl pasted__pasted__pasted__lambert43SG1
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
