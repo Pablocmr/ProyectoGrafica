@@ -39,13 +39,6 @@ Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
 map_Kd blancoMesa.png
 Ni 1.00
-newmtl lambert7SG
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.12 0.12 0.12
-Tf 1.00 1.00 1.00
-map_Kd cafeMesa.png
-Ni 1.00
 newmtl lambert8SG
 illum 4
 Kd 0.00 0.00 0.00
@@ -228,6 +221,41 @@ Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
 map_Kd grass.jpg
 Ni 1.00
+newmtl lambert51SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ventana.jpg
+Ni 1.00
+newmtl lambert52SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bordeVentan.png
+Ni 1.00
+newmtl lambert53SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd smallventana.jpg
+Ni 1.00
+newmtl lambert54SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd smallventanaRotada.jpg
+Ni 1.00
+newmtl lambert55SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd puerta.png
+Ni 1.00
 newmtl matraz:bifrostLiquidMaterial1SG
 illum 4
 Kd 0.00 0.00 0.00
@@ -358,13 +386,6 @@ Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
 map_Kd paredesClaro.png
 Ni 1.00
-newmtl pasted__lambert41SG4
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd paredesClaro.png
-Ni 1.00
 newmtl pasted__lambert42SG
 illum 4
 Kd 0.00 0.00 0.00
@@ -436,13 +457,6 @@ Tf 1.00 1.00 1.00
 map_Kd paredesClaro.png
 Ni 1.00
 newmtl pasted__pasted__lambert41SG5
-illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd paredesClaro.png
-Ni 1.00
-newmtl pasted__pasted__lambert41SG7
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
