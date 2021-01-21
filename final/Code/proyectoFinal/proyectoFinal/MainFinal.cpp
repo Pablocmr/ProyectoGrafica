@@ -540,7 +540,8 @@ int main()
 
 
 		glBindVertexArray(VAO);
-		glm::mat4 tmp = glm::mat4(1.0f); //Temp
+		glm::mat4 tmp1 = glm::mat4(1.0f); //Temp1
+		glm::mat4 tmp2 = glm::mat4(1.0f); //Temp1
 
 
 
@@ -569,21 +570,25 @@ int main()
 		//centroReloj
 		view = camera.GetViewMatrix();
 		model = glm::mat4(1);//seteamos la matriz
-		tmp = model = glm::translate(model, glm::vec3(-1.6844f, 11.5547f, -9.3084f));//-1.6844 11.5547  -9.3084
+		tmp1 = model = glm::translate(model, glm::vec3(-1.6844f, 11.5547f, -9.3084f));//-1.6844 11.5547  -9.3084
+		model = glm::scale(model, glm::vec3(1.0f + (rotReloj * 0.1f)));
 		//tmp = model = glm::translate(model, glm::vec3(0.0f,0.0f,0.0f));
 		//model = glm::rotate(model, glm::radians(rot), glm::vec3(1.0f,0.0f,0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		centroReloj.Draw(lightingShader);
 
 		//relojMin
+		model = tmp2;
 		model = glm::rotate(model, glm::radians(rotReloj), glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::scale(model, glm::vec3(1.0f + (rotReloj*0.1f)));
 		model = glm::translate(model, glm::vec3(0.0f, 0.4027f, +0.0371f));//-1.6844  11.9574  -9.3455
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		relojMin.Draw(lightingShader);
 
 		//relojHor
-		model = tmp;
+		model = tmp1;
 		model = glm::rotate(model, glm::radians(rotReloj), glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::scale(model, glm::vec3(1.0f + (rotReloj * 0.1f)));
 		model = glm::translate(model, glm::vec3(0.163f, -0.2941f, -0.0371f));//-1.5214   11.2606   -9.3455
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		relojHor.Draw(lightingShader);
@@ -595,7 +600,7 @@ int main()
 		//tmp = model = glm::translate(model, glm::vec3(0, 0, 0));
 		view = camera.GetViewMatrix();
 		model = glm::mat4(1);//seteamos la matriz
-		tmp = model = glm::translate(model, glm::vec3(8.554f+posCajaX, 8.4685f, 7.1253f + posCajaZ));
+		tmp1 = model = glm::translate(model, glm::vec3(8.554f+posCajaX, 8.4685f, 7.1253f + posCajaZ));
 		//tmp = model = glm::translate(model, glm::vec3(0.0f,0.0f,0.0f));
 		//model = glm::rotate(model, glm::radians(rot), glm::vec3(1.0f,0.0f,0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -604,7 +609,7 @@ int main()
 
 		//ojo
 		//tmp = model = glm::translate(model, glm::vec3(0, 0, 0));	
-		tmp = model = glm::translate(model, glm::vec3(-0.0417f, -0.6025f, 1.3449f));//8.5123f,7.8660f,8.4702f
+		tmp1 = model = glm::translate(model, glm::vec3(-0.0417f, -0.6025f, 1.3449f));//8.5123f,7.8660f,8.4702f
 		model = glm::rotate(model, glm::radians(rotOjo), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		ojo.Draw(lightingShader);
