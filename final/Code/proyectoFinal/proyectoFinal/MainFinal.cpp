@@ -53,10 +53,12 @@ float range = 0.0f;
 bool circuito = false;
 bool recorrido1 = true;
 bool recorrido2 = false;
+bool recorrido3 = false;
+bool recorrido4 = false;
 float rotOjo = 0.0f;
 float sentidoOjo = true;
-float posCaja = 0.0f;
-
+float posCajaZ = 0.0f;
+float posCajaX = 0.0f;
 
 // Light attributes
 glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
@@ -219,9 +221,11 @@ int main()
 	*/
 	// Build and compile our shader program
 
+
 	//Modelo de animación
-	ModelAnim animacionPersonaje("Animaciones/doctor/Thriller Part 3.dae");
-	animacionPersonaje.initShaders(animShader.Program);
+	//ApagadoAnimacion
+	//ModelAnim animacionPersonaje("Animaciones/doctor/Thriller Part 3.dae");
+	//animacionPersonaje.initShaders(animShader.Program);
 	//Inicialización de KeyFrames
 	
 	for(int i=0; i<MAX_FRAMES; i++)
@@ -534,13 +538,13 @@ int main()
 		glBindVertexArray(VAO);
 		glm::mat4 tmp = glm::mat4(1.0f); //Temp
 
-		
+
 
 		//Carga de modelo 
 
 
 
-				
+
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		view = camera.GetViewMatrix();
@@ -555,7 +559,7 @@ int main()
 		//tmp = model = glm::translate(model, glm::vec3(0, 0, 0));
 		view = camera.GetViewMatrix();
 		model = glm::mat4(1);//seteamos la matriz
-		tmp=model = glm::translate(model, glm::vec3(8.554f, 8.4685f, 7.1253f+posCaja));
+		tmp = model = glm::translate(model, glm::vec3(8.554f+posCajaX, 8.4685f, 7.1253f + posCajaZ));
 		//tmp = model = glm::translate(model, glm::vec3(0.0f,0.0f,0.0f));
 		//model = glm::rotate(model, glm::radians(rot), glm::vec3(1.0f,0.0f,0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -632,8 +636,9 @@ int main()
 		*/
 
 		glBindVertexArray(0);
-
-		/*_______________________________Personaje Animado___________________________*/ 
+		/*_______________________________Personaje Animado___________________________*/
+		/*ApagadoAnimacion
+		
 		animShader.Use();
 		modelLoc = glGetUniformLocation(animShader.Program, "model");
 		viewLoc = glGetUniformLocation(animShader.Program, "view");
@@ -654,9 +659,9 @@ int main()
 		model = glm::translate(model, glm::vec3(0,0,40));
 		model = glm::scale(model, glm::vec3(0.02f));	// it's a bit too big for our scene, so scale it down
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		animacionPersonaje.Draw(animShader);		
+		animacionPersonaje.Draw(animShader);		//apagada animación
 		glBindVertexArray(0);
-
+		*/
 
 
 
@@ -775,37 +780,65 @@ void animacionCaja()
 {
 
 	//Movimiento de la caja
-	if (circuito)
+	if (circuito)//X  de 0 a 1.4799
 	{
 		if (recorrido1)
 		{
-			if (posCaja>3.205)
+			posCajaZ += 0.0005;
+			if (posCajaZ>3.05)
 			{
 				recorrido1 = false;
 				recorrido2 = true;
 			}
-			posCaja += 0.005;
-			//printf("Avanzamos: %f", posCaja);
+			
+			printf("Avanzamos: X:%f Z: %f\n", posCajaX,posCajaZ);
 
 		}
 		if (recorrido2)
 		{
-			if (posCaja < -0.5199)
+			posCajaX += 0.0005;
+			if (posCajaX > 1.4799)
 			{
 				recorrido2 = false;
+				recorrido3 = true;
+			}
+			
+			//printf("Avanzamos: %f", posCajaZ);
+			printf("Avanzamos: X:%f Z: %f\n", posCajaX, posCajaZ);
+		}
+		if (recorrido3)
+		{
+			posCajaZ -= 0.0005;
+			if (posCajaZ < -0.5199)
+			{
+				recorrido3 = false;
+				recorrido4 = true;
+			}
+			//printf("Avanzamos: %f", posCajaZ);
+			printf("Avanzamos: X:%f Z: %f\n", posCajaX, posCajaZ);
+		}
+		if (recorrido4)
+		{
+			posCajaX -= 0.0005;
+			if (posCajaX < 0)
+			{
+
+				recorrido4 = false;
 				recorrido1 = true;
 			}
-			posCaja -= 0.005;
-			//printf("Avanzamos: %f", posCaja);
+			
+			//printf("Avanzamos: %f", posCajaZ);
+			printf("Avanzamos: X:%f Z: %f\n", posCajaX, posCajaZ);
 		}
+
 		if (sentidoOjo){
-			rotOjo += 1;
+			rotOjo += .1;
 			if (rotOjo > 90) {
 				sentidoOjo = false;
 			}
 		}
 		else {
-			rotOjo -= 1;
+			rotOjo -= .1;
 			if (rotOjo < -90) {
 				sentidoOjo = true;
 			}
@@ -875,7 +908,7 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 	if (keys[GLFW_KEY_C])
 	{
 		circuito = !circuito;
-		printf("Cambio estado animacionTrue");
+		printf("Cambio estado animacion");
 	}
 }
 
@@ -905,14 +938,14 @@ void DoMovement()
 	if (keys[GLFW_KEY_1])
 	{
 
-		rotOjo += 1;
-		printf("Subiendo %f", rotOjo);
+		posCajaX += 0.01;
+		printf("Subiendo %f\n", posCajaX);
 	}
 
 	if (keys[GLFW_KEY_2])
 	{
-		rotOjo -= 1;
-		printf("Bajando %f", rotOjo);
+		posCajaX -= 0.01;
+		printf("Bajando %f\n", posCajaX);
 	}
 
 

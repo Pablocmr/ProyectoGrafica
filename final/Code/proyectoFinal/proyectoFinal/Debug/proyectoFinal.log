@@ -1,13 +1,19 @@
 ﻿  MainFinal.cpp
 C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\modelAnim.h(104,44): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
 C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\modelAnim.h(519,24): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\MainFinal.cpp(425,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\MainFinal.cpp(787,20): warning C4305: '+=': truncamiento de 'double' a 'float'
-C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\MainFinal.cpp(798,20): warning C4305: '-=': truncamiento de 'double' a 'float'
-C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\MainFinal.cpp(887,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\MainFinal.cpp(888,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\MainFinal.cpp(892,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\MainFinal.cpp(893,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\MainFinal.cpp(895,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\MainFinal.cpp(896,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\MainFinal.cpp(429,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\MainFinal.cpp(787,22): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\MainFinal.cpp(799,22): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\MainFinal.cpp(811,22): warning C4305: '-=': truncamiento de 'double' a 'float'
+C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\MainFinal.cpp(822,22): warning C4305: '-=': truncamiento de 'double' a 'float'
+C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\MainFinal.cpp(835,16): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\MainFinal.cpp(841,16): warning C4305: '-=': truncamiento de 'double' a 'float'
+C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\MainFinal.cpp(920,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\MainFinal.cpp(921,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\MainFinal.cpp(925,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\MainFinal.cpp(926,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\MainFinal.cpp(928,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\MainFinal.cpp(929,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\MainFinal.cpp(941,19): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\proyectoFinal\MainFinal.cpp(947,19): warning C4305: '-=': truncamiento de 'double' a 'float'
   proyectoFinal.vcxproj -> C:\Users\hectorhmx}\Documents\2021-1\LabGrafica\Final\ProyectoGrafica\final\Code\proyectoFinal\Debug\proyectoFinal.exe
