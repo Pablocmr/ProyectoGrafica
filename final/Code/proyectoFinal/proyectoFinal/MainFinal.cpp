@@ -220,7 +220,7 @@ int main()
 	// Build and compile our shader program
 
 	//Modelo de animación
-	ModelAnim animacionPersonaje("Animaciones/Personaje2/MacarenaDance.dae");
+	ModelAnim animacionPersonaje("Animaciones/doctor/Thriller Part 3.dae");
 	animacionPersonaje.initShaders(animShader.Program);
 	//Inicialización de KeyFrames
 	
