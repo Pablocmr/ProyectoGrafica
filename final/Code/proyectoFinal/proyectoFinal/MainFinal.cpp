@@ -571,6 +571,7 @@ int main()
 		view = camera.GetViewMatrix();
 		model = glm::mat4(1);//seteamos la matriz
 		tmp1 = model = glm::translate(model, glm::vec3(-1.6844f, 11.5547f, -9.3084f));//-1.6844 11.5547  -9.3084
+		tmp2 = model;
 		model = glm::scale(model, glm::vec3(1.0f + (rotReloj * 0.1f)));
 		//tmp = model = glm::translate(model, glm::vec3(0.0f,0.0f,0.0f));
 		//model = glm::rotate(model, glm::radians(rot), glm::vec3(1.0f,0.0f,0.0f));
