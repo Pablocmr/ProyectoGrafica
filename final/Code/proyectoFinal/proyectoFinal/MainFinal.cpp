@@ -31,19 +31,31 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 void MouseCallback(GLFWwindow *window, double xPos, double yPos);
 void DoMovement();
 void animacion();
+void animacionCaja();
 
 // Window dimensions
 const GLuint WIDTH = 800, HEIGHT = 600;
 int SCREEN_WIDTH, SCREEN_HEIGHT;
 
 // Camera
-Camera  camera(glm::vec3(-100.0f, 2.0f, -45.0f));
+//Camera  camera(glm::vec3(-100.0f, 2.0f, -45.0f));
+Camera  camera(glm::vec3(0.0f, 0.0f, 0.0f));
 GLfloat lastX = WIDTH / 2.0;
 GLfloat lastY = HEIGHT / 2.0;
 bool keys[1024];
 bool firstMouse = true;
 float range = 0.0f;
-float rot = 0.0f;
+
+
+//variables
+//float rot = 0.0f;
+
+bool circuito = false;
+bool recorrido1 = true;
+bool recorrido2 = false;
+float rotOjo = 0.0f;
+float sentidoOjo = true;
+float posCaja = 0.0f;
 
 
 // Light attributes
@@ -194,6 +206,8 @@ int main()
 	
 	
 	Model Escena((char*)"Exports/escena.obj");
+	Model caja((char*)"Exports/caja.obj");
+	Model ojo((char*)"Exports/ojo.obj");
 	/*
 	Model BotaDer((char*)"Models/Personaje/bota.obj");
 	Model PiernaDer((char*)"Models/Personaje/piernader.obj");
@@ -416,7 +430,7 @@ int main()
 		glfwPollEvents();
 		DoMovement();
 		animacion();
-
+		animacionCaja();
 
 		// Clear the colorbuffer
 		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
@@ -523,17 +537,38 @@ int main()
 		
 
 		//Carga de modelo 
-		//Personaje
+
+
+
+				
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		view = camera.GetViewMatrix();
 		glm::mat4 model(1);
-		tmp = model = glm::translate(model, glm::vec3(0, 1, 0));
-		model = glm::translate(model, glm::vec3(posX, posY, posZ));
-		model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Escena.Draw(lightingShader);
 		glEnable(GL_BLEND);
+		//caja
+		//tmp = model = glm::translate(model, glm::vec3(0, 1, 0));
+		//model = glm::translate(model, glm::vec3(posX, posY, posZ));
+		//model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0));//original
+		//tmp = model = glm::translate(model, glm::vec3(0, 0, 0));
+		view = camera.GetViewMatrix();
+		model = glm::mat4(1);//seteamos la matriz
+		tmp=model = glm::translate(model, glm::vec3(8.554f, 8.4685f, 7.1253f+posCaja));
+		//tmp = model = glm::translate(model, glm::vec3(0.0f,0.0f,0.0f));
+		//model = glm::rotate(model, glm::radians(rot), glm::vec3(1.0f,0.0f,0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		caja.Draw(lightingShader);
+		
+
+		//ojo
+		//tmp = model = glm::translate(model, glm::vec3(0, 0, 0));	
+		tmp = model = glm::translate(model, glm::vec3(-0.0417f, -0.6025f, 1.3449f));//8.5123f,7.8660f,8.4702f
+		model = glm::rotate(model, glm::radians(rotOjo), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		ojo.Draw(lightingShader);
+
 		/*
 		tmp = model = glm::translate(model, glm::vec3(0, 1, 0));
 		model = glm::translate(model,glm::vec3(posX,posY,posZ));
@@ -616,10 +651,10 @@ int main()
 		view = camera.GetViewMatrix();
 
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(PosIni.x+5.0f,PosIni.y-1.0f,PosIni.z));
+		model = glm::translate(model, glm::vec3(0,0,0));
 		model = glm::scale(model, glm::vec3(0.02f));	// it's a bit too big for our scene, so scale it down
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		animacionPersonaje.Draw(animShader);
+		animacionPersonaje.Draw(animShader);		
 		glBindVertexArray(0);
 
 
@@ -736,6 +771,48 @@ void animacion()
 		}
 	}
 
+void animacionCaja()
+{
+
+	//Movimiento de la caja
+	if (circuito)
+	{
+		if (recorrido1)
+		{
+			if (posCaja>3.205)
+			{
+				recorrido1 = false;
+				recorrido2 = true;
+			}
+			posCaja += 0.005;
+			//printf("Avanzamos: %f", posCaja);
+
+		}
+		if (recorrido2)
+		{
+			if (posCaja < -0.5199)
+			{
+				recorrido2 = false;
+				recorrido1 = true;
+			}
+			posCaja -= 0.005;
+			//printf("Avanzamos: %f", posCaja);
+		}
+		if (sentidoOjo){
+			rotOjo += 1;
+			if (rotOjo > 90) {
+				sentidoOjo = false;
+			}
+		}
+		else {
+			rotOjo -= 1;
+			if (rotOjo < -90) {
+				sentidoOjo = true;
+			}
+		}
+	}
+}
+
 
 // Is called whenever a key is pressed/released via GLFW
 void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode)
@@ -795,6 +872,11 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 		else
 			LightP1 = glm::vec3(0.0f, 0.0f, 0.0f);
 	}
+	if (keys[GLFW_KEY_C])
+	{
+		circuito = !circuito;
+		printf("Cambio estado animacionTrue");
+	}
 }
 
 void MouseCallback(GLFWwindow *window, double xPos, double yPos)
@@ -823,25 +905,17 @@ void DoMovement()
 	if (keys[GLFW_KEY_1])
 	{
 
-		rot += 1;
-
+		rotOjo += 1;
+		printf("Subiendo %f", rotOjo);
 	}
 
 	if (keys[GLFW_KEY_2])
 	{
-		if (rotRodIzq<80.0f)
-			rotRodIzq += 1.0f;
-			
+		rotOjo -= 1;
+		printf("Bajando %f", rotOjo);
 	}
 
-	if (keys[GLFW_KEY_3])
-	{
-		if (rotRodIzq>-45)
-			rotRodIzq -= 1.0f;
-		
-	}
 
-	
 
 	//Mov Personaje
 	if (keys[GLFW_KEY_H])
