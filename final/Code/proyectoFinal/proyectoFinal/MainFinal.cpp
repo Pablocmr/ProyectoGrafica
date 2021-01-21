@@ -644,14 +644,14 @@ int main()
 
 		glUniform3f(glGetUniformLocation(animShader.Program, "material.specular"), 0.5f, 0.5f, 0.5f);
 		glUniform1f(glGetUniformLocation(animShader.Program, "material.shininess"), 32.0f);
-		glUniform3f(glGetUniformLocation(animShader.Program, "light.ambient"), 0.0f, 1.0f, 1.0f);
-		glUniform3f(glGetUniformLocation(animShader.Program, "light.diffuse"), 0.0f, 1.0f, 1.0f);
+		glUniform3f(glGetUniformLocation(animShader.Program, "light.ambient"), 1.0f, 1.0f, 1.0f);
+		glUniform3f(glGetUniformLocation(animShader.Program, "light.diffuse"), 1.0f, 1.0f, 1.0f);
 		glUniform3f(glGetUniformLocation(animShader.Program, "light.specular"), 0.5f, 0.5f, 0.5f);
 		glUniform3f(glGetUniformLocation(animShader.Program, "light.direction"),0.0f, -1.0f, -1.0f);
 		view = camera.GetViewMatrix();
 
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0,0,0));
+		model = glm::translate(model, glm::vec3(0,0,40));
 		model = glm::scale(model, glm::vec3(0.02f));	// it's a bit too big for our scene, so scale it down
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		animacionPersonaje.Draw(animShader);		
