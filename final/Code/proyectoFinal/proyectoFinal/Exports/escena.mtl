@@ -323,6 +323,34 @@ Ka 0.63 0.63 0.63
 Tf 1.00 1.00 1.00
 map_Kd azulMesa.png
 Ni 1.00
+newmtl pasted__lambert3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd black.png
+Ni 1.00
+newmtl pasted__lambert3SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd black.png
+Ni 1.00
+newmtl pasted__lambert3SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd black.png
+Ni 1.00
+newmtl pasted__lambert3SG3
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd black.png
+Ni 1.00
 newmtl pasted__lambert21SG
 illum 4
 Kd 0.00 0.00 0.00
@@ -428,6 +456,76 @@ Ka 0.58 0.58 0.58
 Tf 1.00 1.00 1.00
 map_Kd rosaParedes.png
 Ni 1.00
+newmtl pasted__lambert52SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bordeVentan.png
+Ni 1.00
+newmtl pasted__lambert52SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bordeVentan.png
+Ni 1.00
+newmtl pasted__lambert52SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bordeVentan.png
+Ni 1.00
+newmtl pasted__lambert53SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd smallventana.jpg
+Ni 1.00
+newmtl pasted__lambert53SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd smallventana.jpg
+Ni 1.00
+newmtl pasted__lambert53SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd smallventana.jpg
+Ni 1.00
+newmtl pasted__lambert55SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd puerta.png
+Ni 1.00
+newmtl pasted__lambert55SG1
+illum 4
+Kd 0.00 0.00 0.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd puerta.png
+Ni 1.00
+newmtl pasted__lambert55SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd puerta.png
+Ni 1.00
+newmtl pasted__pasted__lambert3SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd black.png
+Ni 1.00
 newmtl pasted__pasted__lambert41SG1
 illum 4
 Kd 0.00 0.00 0.00
@@ -532,6 +630,27 @@ Kd 0.00 0.00 0.00
 Ka 0.58 0.58 0.58
 Tf 1.00 1.00 1.00
 map_Kd rosaParedes.png
+Ni 1.00
+newmtl pasted__pasted__lambert52SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd bordeVentan.png
+Ni 1.00
+newmtl pasted__pasted__lambert53SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd smallventana.jpg
+Ni 1.00
+newmtl pasted__pasted__lambert55SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 1.00 1.00 1.00
+Tf 1.00 1.00 1.00
+map_Kd puerta.png
 Ni 1.00
 newmtl pasted__pasted__pasted__lambert41SG1
 illum 4
