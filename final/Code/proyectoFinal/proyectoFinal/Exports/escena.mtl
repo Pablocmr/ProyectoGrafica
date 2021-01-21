@@ -221,6 +221,13 @@ Ka 0.58 0.58 0.58
 Tf 1.00 1.00 1.00
 map_Kd rosaParedes.png
 Ni 1.00
+newmtl lambert48SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd grass.jpg
+Ni 1.00
 newmtl matraz:bifrostLiquidMaterial1SG
 illum 4
 Kd 0.00 0.00 0.00
@@ -351,6 +358,13 @@ Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
 map_Kd paredesClaro.png
 Ni 1.00
+newmtl pasted__lambert41SG4
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd paredesClaro.png
+Ni 1.00
 newmtl pasted__lambert42SG
 illum 4
 Kd 0.00 0.00 0.00
@@ -386,6 +400,13 @@ Ka 0.58 0.58 0.58
 Tf 1.00 1.00 1.00
 map_Kd rosaParedes.png
 Ni 1.00
+newmtl pasted__lambert47SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.58 0.58 0.58
+Tf 1.00 1.00 1.00
+map_Kd rosaParedes.png
+Ni 1.00
 newmtl pasted__pasted__lambert41SG1
 illum 4
 Kd 0.00 0.00 0.00
@@ -415,6 +436,13 @@ Tf 1.00 1.00 1.00
 map_Kd paredesClaro.png
 Ni 1.00
 newmtl pasted__pasted__lambert41SG5
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd paredesClaro.png
+Ni 1.00
+newmtl pasted__pasted__lambert41SG7
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
