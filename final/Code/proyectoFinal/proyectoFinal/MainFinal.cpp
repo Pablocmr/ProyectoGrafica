@@ -60,6 +60,9 @@ float sentidoOjo = true;
 float posCajaZ = 0.0f;
 float posCajaX = 0.0f;
 float rotReloj = 0.0f;
+float scaReloj = 0.0f;
+float trasRelojZ = 0.0f;
+
 // Light attributes
 glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
 glm::vec3 PosIni(-95.0f, 1.0f, -45.0f);
@@ -572,7 +575,7 @@ int main()
 		model = glm::mat4(1);//seteamos la matriz
 		tmp1 = model = glm::translate(model, glm::vec3(-1.6844f, 11.5547f, -9.3084f));//-1.6844 11.5547  -9.3084
 		tmp2 = model;
-		model = glm::scale(model, glm::vec3(1.0f + (rotReloj * 0.1f)));
+		model = glm::scale(model, glm::vec3(1.0f + (scaReloj* 0.1f)));
 		//tmp = model = glm::translate(model, glm::vec3(0.0f,0.0f,0.0f));
 		//model = glm::rotate(model, glm::radians(rot), glm::vec3(1.0f,0.0f,0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -581,7 +584,7 @@ int main()
 		//relojMin
 		model = tmp2;
 		model = glm::rotate(model, glm::radians(rotReloj), glm::vec3(0.0f, 0.0f, 1.0f));
-		model = glm::scale(model, glm::vec3(1.0f + (rotReloj*0.1f)));
+		model = glm::scale(model, glm::vec3(1.0f + (scaReloj*0.1f)));
 		model = glm::translate(model, glm::vec3(0.0f, 0.4027f, +0.0371f));//-1.6844  11.9574  -9.3455
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		relojMin.Draw(lightingShader);
@@ -589,7 +592,7 @@ int main()
 		//relojHor
 		model = tmp1;
 		model = glm::rotate(model, glm::radians(rotReloj), glm::vec3(0.0f, 0.0f, 1.0f));
-		model = glm::scale(model, glm::vec3(1.0f + (rotReloj * 0.1f)));
+		model = glm::scale(model, glm::vec3(1.0f + (scaReloj * 0.1f)));
 		model = glm::translate(model, glm::vec3(0.163f, -0.2941f, -0.0371f));//-1.5214   11.2606   -9.3455
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		relojHor.Draw(lightingShader);
@@ -981,15 +984,26 @@ void DoMovement()
 	{
 
 		rotReloj+= 0.5;
-		printf("Subiendo %f\n", rotReloj);
+		printf("Subiendo rotReloj %f\n ", rotReloj);
 	}
 
 	if (keys[GLFW_KEY_2])
 	{
 		rotReloj -= 0.5;
-		printf("Bajando %f\n", rotReloj);
+		printf("Bajando rotReloj %f\n", rotReloj);
 	}
 
+	if (keys[GLFW_KEY_3])
+	{
+		scaReloj+= 0.5;
+		printf("Subiendo scaReloj %f\n", scaReloj);
+	}
+
+	if (keys[GLFW_KEY_4])
+	{
+		scaReloj -= 0.5;
+		printf("Bajando scaReloj %f\n", scaReloj);
+	}
 
 
 	//Mov Personaje
