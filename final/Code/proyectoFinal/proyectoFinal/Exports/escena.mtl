@@ -256,6 +256,13 @@ Ka 1.00 1.00 1.00
 Tf 1.00 1.00 1.00
 map_Kd puerta.png
 Ni 1.00
+newmtl lambert56SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.04 0.04 0.04
+Tf 1.00 1.00 1.00
+map_Kd grisCalle.png
+Ni 1.00
 newmtl matraz:bifrostLiquidMaterial1SG
 illum 4
 Kd 0.00 0.00 0.00
@@ -345,6 +352,13 @@ Tf 1.00 1.00 1.00
 map_Kd black.png
 Ni 1.00
 newmtl pasted__lambert3SG3
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd black.png
+Ni 1.00
+newmtl pasted__lambert3SG4
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
