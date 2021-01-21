@@ -59,7 +59,7 @@ float rotOjo = 0.0f;
 float sentidoOjo = true;
 float posCajaZ = 0.0f;
 float posCajaX = 0.0f;
-
+float rotReloj = 0.0f;
 // Light attributes
 glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
 glm::vec3 PosIni(-95.0f, 1.0f, -45.0f);
@@ -210,6 +210,10 @@ int main()
 	Model Escena((char*)"Exports/escena.obj");
 	Model caja((char*)"Exports/caja.obj");
 	Model ojo((char*)"Exports/ojo.obj");
+	Model reloj((char*)"Exports/reloj.obj");
+	Model centroReloj((char*)"Exports/centroReloj.obj");
+	Model relojMin ((char*)"Exports/relojMin.obj");
+	Model relojHor((char*)"Exports/relojHor.obj");
 	/*
 	Model BotaDer((char*)"Models/Personaje/bota.obj");
 	Model PiernaDer((char*)"Models/Personaje/piernader.obj");
@@ -552,6 +556,38 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Escena.Draw(lightingShader);
 		glEnable(GL_BLEND);
+
+		//reloj
+		view = camera.GetViewMatrix();
+		model = glm::mat4(1);//seteamos la matriz
+		model = glm::translate(model, glm::vec3(-1.6844f, 11.5547f, -9.3201f));//-1.6844 11.5547  -9.3201
+		//tmp = model = glm::translate(model, glm::vec3(0.0f,0.0f,0.0f));
+		//model = glm::rotate(model, glm::radians(rot), glm::vec3(1.0f,0.0f,0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		reloj.Draw(lightingShader);
+
+		//centroReloj
+		view = camera.GetViewMatrix();
+		model = glm::mat4(1);//seteamos la matriz
+		tmp = model = glm::translate(model, glm::vec3(-1.6844f, 11.5547f, -9.3084f));//-1.6844 11.5547  -9.3084
+		//tmp = model = glm::translate(model, glm::vec3(0.0f,0.0f,0.0f));
+		//model = glm::rotate(model, glm::radians(rot), glm::vec3(1.0f,0.0f,0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		centroReloj.Draw(lightingShader);
+
+		//relojMin
+		model = glm::rotate(model, glm::radians(rotReloj), glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::translate(model, glm::vec3(0.0f, 0.4027f, +0.0371f));//-1.6844  11.9574  -9.3455
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		relojMin.Draw(lightingShader);
+
+		//relojHor
+		model = tmp;
+		model = glm::rotate(model, glm::radians(rotReloj), glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::translate(model, glm::vec3(0.163f, -0.2941f, -0.0371f));//-1.5214   11.2606   -9.3455
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		relojHor.Draw(lightingShader);
+
 		//caja
 		//tmp = model = glm::translate(model, glm::vec3(0, 1, 0));
 		//model = glm::translate(model, glm::vec3(posX, posY, posZ));
@@ -938,14 +974,14 @@ void DoMovement()
 	if (keys[GLFW_KEY_1])
 	{
 
-		posCajaX += 0.01;
-		printf("Subiendo %f\n", posCajaX);
+		rotReloj+= 0.5;
+		printf("Subiendo %f\n", rotReloj);
 	}
 
 	if (keys[GLFW_KEY_2])
 	{
-		posCajaX -= 0.01;
-		printf("Bajando %f\n", posCajaX);
+		rotReloj -= 0.5;
+		printf("Bajando %f\n", rotReloj);
 	}
 
 
