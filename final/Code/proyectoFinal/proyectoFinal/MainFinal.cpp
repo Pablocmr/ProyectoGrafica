@@ -66,7 +66,7 @@ float rotRelojInv = 0.0f;
 float scaReloj = 0.0f;
 float transRelojZ = 0.0f;
 float transRelojY = 0.0f;
-float deltasReloj = 0.005f;
+float deltasReloj = 0.2f;
 bool aspas = false;
 bool recRel0 = true;
 bool recRel1 = false;
@@ -244,8 +244,9 @@ int main()
 
 	//Modelo de animación
 	//ApagadoAnimacion
-	//ModelAnim animacionPersonaje("Animaciones/doctor/Thriller Part 3.dae");
-	//animacionPersonaje.initShaders(animShader.Program);
+	ModelAnim animacionPersonaje("Animaciones/doctor/Thriller Part 3.dae");
+	animacionPersonaje.initShaders(animShader.Program);
+
 	//Inicialización de KeyFrames
 	
 	for(int i=0; i<MAX_FRAMES; i++)
@@ -696,7 +697,7 @@ int main()
 
 		glBindVertexArray(0);
 		/*_______________________________Personaje Animado___________________________*/
-		/*ApagadoAnimacion
+		//ApagadoAnimacion
 		
 		animShader.Use();
 		modelLoc = glGetUniformLocation(animShader.Program, "model");
@@ -720,7 +721,6 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		animacionPersonaje.Draw(animShader);		//apagada animación
 		glBindVertexArray(0);
-		*/
 
 
 
@@ -843,7 +843,7 @@ void animacionCaja()
 	{
 		if (recorrido1)
 		{
-			posCajaZ += 0.0005;
+			posCajaZ += 0.01;
 			if (posCajaZ>3.05)
 			{
 				recorrido1 = false;
@@ -855,7 +855,7 @@ void animacionCaja()
 		}
 		if (recorrido2)
 		{
-			posCajaX += 0.0005;
+			posCajaX += 0.01;
 			if (posCajaX > 1.4799)
 			{
 				recorrido2 = false;
@@ -867,7 +867,7 @@ void animacionCaja()
 		}
 		if (recorrido3)
 		{
-			posCajaZ -= 0.0005;
+			posCajaZ -= 0.01;
 			if (posCajaZ < -0.5199)
 			{
 				recorrido3 = false;
@@ -878,7 +878,7 @@ void animacionCaja()
 		}
 		if (recorrido4)
 		{
-			posCajaX -= 0.0005;
+			posCajaX -= 0.01;
 			if (posCajaX < 0)
 			{
 
@@ -891,13 +891,13 @@ void animacionCaja()
 		}
 
 		if (sentidoOjo){
-			rotOjo += .1;
+			rotOjo += 6;
 			if (rotOjo > 90) {
 				sentidoOjo = false;
 			}
 		}
 		else {
-			rotOjo -= .1;
+			rotOjo -= 6;
 			if (rotOjo < -90) {
 				sentidoOjo = true;
 			}
@@ -911,9 +911,9 @@ void animacionReloj()
 	{
 		if (recRel0) {
 			contVueltas += 1;
-			rotReloj += 1+(contVueltas/900);
-			rotRelojInv -=.5 + (contVueltas / 900);
-			if (contVueltas > 900) {
+			rotReloj += 6+ (contVueltas*4/270);
+			rotRelojInv -=5.5 + (contVueltas*4 / 270);
+			if (contVueltas > 270) {
 				recRel1 = true;
 				recRel0 = false;
 			}
@@ -921,10 +921,10 @@ void animacionReloj()
 		if (recRel1)
 		{
 			transRelojZ += deltasReloj;
-			scaReloj += deltasReloj;
-			rotReloj += 2;
-			rotRelojInv -= 1.5;
-			if (transRelojZ > 25)
+			scaReloj += 0.005f;
+			rotReloj += 10;
+			rotRelojInv -= 9.5;
+			if (transRelojZ > 30)
 			{
 				recRel1 = false;
 				recRel2 = true;
@@ -937,9 +937,9 @@ void animacionReloj()
 		{
 			transRelojZ += deltasReloj*2;
 			transRelojY += deltasReloj*2.001;
-			scaReloj += deltasReloj*deltasReloj;
-			rotReloj += 3;
-			rotRelojInv -= 2.5;
+			scaReloj += 0.05f * 0.05f;
+			rotReloj += 15;
+			rotRelojInv -= 14.5;
 			if (transRelojZ > 50)
 			{
 				recRel2 = false;
