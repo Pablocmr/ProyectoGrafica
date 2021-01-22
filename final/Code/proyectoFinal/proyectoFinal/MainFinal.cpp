@@ -33,6 +33,7 @@ void DoMovement();
 void animacion();
 void animacionCaja();
 void animacionReloj();
+void animarPuerta();
 
 // Window dimensions
 const GLuint WIDTH = 800, HEIGHT = 600;
@@ -72,6 +73,11 @@ bool recRel0 = true;
 bool recRel1 = false;
 bool recRel2 = false;
 int contVueltas = 0;
+//lavadora
+float rotPuerta = 0.0f;
+bool puerta = false;
+bool edo1 = true;
+bool edo2 = false;
 
 
 
@@ -224,6 +230,8 @@ int main()
 	
 	
 	Model Escena((char*)"Exports/escena.obj");
+	Model lavadora((char*)"Exports/lavadora.obj");
+	Model puerta_lavadora((char*)"Exports/puerta_lavadora.obj");
 	Model caja((char*)"Exports/caja.obj");
 	Model ojo((char*)"Exports/ojo.obj");
 	Model reloj((char*)"Exports/reloj.obj");
@@ -244,8 +252,8 @@ int main()
 
 	//Modelo de animación
 	//ApagadoAnimacion
-	ModelAnim animacionPersonaje("Animaciones/doctor/Thriller Part 3.dae");
-	animacionPersonaje.initShaders(animShader.Program);
+	//ModelAnim animacionPersonaje("Animaciones/doctor/Thriller Part 3.dae");
+	//animacionPersonaje.initShaders(animShader.Program);
 
 	//Inicialización de KeyFrames
 	
@@ -457,6 +465,7 @@ int main()
 		animacion();
 		animacionCaja();
 		animacionReloj();
+		animarPuerta();
 
 		// Clear the colorbuffer
 		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
@@ -588,9 +597,9 @@ int main()
 		//centroReloj
 		view = camera.GetViewMatrix();
 		model = glm::mat4(1);//seteamos la matriz
-		tmp1 = model = glm::translate(model, glm::vec3(-1.6844f, 11.5547f+transRelojY, -9.3084f+transRelojZ));//-1.6844 11.5547  -9.3084
+		tmp1 = model = glm::translate(model, glm::vec3(-1.6844f, 11.5547f + transRelojY, -9.3084f + transRelojZ));//-1.6844 11.5547  -9.3084
 		tmp2 = model;
-		model = glm::scale(model, glm::vec3(1.0f + (scaReloj* 0.1f)));
+		model = glm::scale(model, glm::vec3(1.0f + (scaReloj * 0.1f)));
 		//tmp = model = glm::translate(model, glm::vec3(0.0f,0.0f,0.0f));
 		//model = glm::rotate(model, glm::radians(rot), glm::vec3(1.0f,0.0f,0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -599,8 +608,8 @@ int main()
 		//relojMin
 		model = tmp2;
 		model = glm::rotate(model, glm::radians(rotReloj), glm::vec3(0.0f, 0.0f, 1.0f));
-		model = glm::scale(model, glm::vec3(1.0f + (scaReloj*0.1f)));
-		model = glm::translate(model, glm::vec3(0.0f, 0.4027f , +0.0371f));//-1.6844  11.9574  -9.3455
+		model = glm::scale(model, glm::vec3(1.0f + (scaReloj * 0.1f)));
+		model = glm::translate(model, glm::vec3(0.0f, 0.4027f, +0.0371f));//-1.6844  11.9574  -9.3455
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		relojMin.Draw(lightingShader);
 
@@ -619,12 +628,12 @@ int main()
 		//tmp = model = glm::translate(model, glm::vec3(0, 0, 0));
 		view = camera.GetViewMatrix();
 		model = glm::mat4(1);//seteamos la matriz
-		tmp1 = model = glm::translate(model, glm::vec3(8.554f+posCajaX, 8.4685f, 7.1253f + posCajaZ));
+		tmp1 = model = glm::translate(model, glm::vec3(8.554f + posCajaX, 8.4685f, 7.1253f + posCajaZ));
 		//tmp = model = glm::translate(model, glm::vec3(0.0f,0.0f,0.0f));
 		//model = glm::rotate(model, glm::radians(rot), glm::vec3(1.0f,0.0f,0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		caja.Draw(lightingShader);
-		
+
 
 		//ojo
 		//tmp = model = glm::translate(model, glm::vec3(0, 0, 0));	
@@ -632,6 +641,32 @@ int main()
 		model = glm::rotate(model, glm::radians(rotOjo), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		ojo.Draw(lightingShader);
+
+		//lavadora
+		view = camera.GetViewMatrix();
+		model = glm::mat4(1);//seteamos la matriz
+		model = glm::translate(model, glm::vec3(5.4474f, 2.8327f, -7.1993f));//5.4474  2.8327   -7.1993
+		//tmp = model = glm::translate(model, glm::vec3(0.0f,0.0f,0.0f));
+		//model = glm::rotate(model, glm::radians(rot), glm::vec3(1.0f,0.0f,0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		lavadora.Draw(lightingShader);
+
+
+		//puerta_lavadora
+		view = camera.GetViewMatrix();
+		model = glm::mat4(1);//seteamos la matriz
+		model = glm::translate(model, glm::vec3(3.8443f, 3.1237f, -4.9510f));
+		model = glm::rotate(model, glm::radians(rotPuerta), glm::vec3(0.0f, 1.0f, 0.0f)); //pivote es distinto 3.8443  3.1237   -4.9136
+		model = glm::translate(model, glm::vec3(1.6031f,0.0f,0.0f));//5.4474   3.1237   -4.9510
+
+		//tmp = model = glm::translate(model, glm::vec3(0, 0, 0));
+		//model = glm::translate(model, glm::vec3(0.0f, 0.291f, 2.2483f));//5.4474   3.1237   -4.9510
+		//model = glm::mat4(-1.6031f, 0.0f, 0.0f);
+		
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		puerta_lavadora.Draw(lightingShader);
+
+
 
 		/*
 		tmp = model = glm::translate(model, glm::vec3(0, 1, 0));
@@ -699,27 +734,35 @@ int main()
 		/*_______________________________Personaje Animado___________________________*/
 		//ApagadoAnimacion
 		
-		animShader.Use();
-		modelLoc = glGetUniformLocation(animShader.Program, "model");
-		viewLoc = glGetUniformLocation(animShader.Program, "view");
-		projLoc = glGetUniformLocation(animShader.Program, "projection");
+		//animShader.Use();
+		//modelLoc = glGetUniformLocation(animShader.Program, "model");
+		//viewLoc = glGetUniformLocation(animShader.Program, "view");
+		//projLoc = glGetUniformLocation(animShader.Program, "projection");
 
-		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
-		glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
+		//glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+		//glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
 
-		glUniform3f(glGetUniformLocation(animShader.Program, "material.specular"), 0.5f, 0.5f, 0.5f);
-		glUniform1f(glGetUniformLocation(animShader.Program, "material.shininess"), 32.0f);
-		glUniform3f(glGetUniformLocation(animShader.Program, "light.ambient"), 1.0f, 1.0f, 1.0f);
-		glUniform3f(glGetUniformLocation(animShader.Program, "light.diffuse"), 1.0f, 1.0f, 1.0f);
-		glUniform3f(glGetUniformLocation(animShader.Program, "light.specular"), 0.5f, 0.5f, 0.5f);
-		glUniform3f(glGetUniformLocation(animShader.Program, "light.direction"),0.0f, -1.0f, -1.0f);
-		view = camera.GetViewMatrix();
+		//glUniform3f(glGetUniformLocation(animShader.Program, "material.specular"), 0.5f, 0.5f, 0.5f);
+		//glUniform1f(glGetUniformLocation(animShader.Program, "material.shininess"), 32.0f);
+		//glUniform3f(glGetUniformLocation(animShader.Program, "light.ambient"), 1.0f, 1.0f, 1.0f);
+		//glUniform3f(glGetUniformLocation(animShader.Program, "light.diffuse"), 1.0f, 1.0f, 1.0f);
+		//glUniform3f(glGetUniformLocation(animShader.Program, "light.specular"), 0.5f, 0.5f, 0.5f);
+		//glUniform3f(glGetUniformLocation(animShader.Program, "light.direction"),0.0f, -1.0f, -1.0f);
+		//view = camera.GetViewMatrix();
 
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0,0,40));
-		model = glm::scale(model, glm::vec3(0.02f));	// it's a bit too big for our scene, so scale it down
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		animacionPersonaje.Draw(animShader);		//apagada animación
+		//model = glm::mat4(1);
+		//model = glm::translate(model, glm::vec3(0,.5,40));
+		//model = glm::scale(model, glm::vec3(0.02f));	// it's a bit too big for our scene, so scale it down
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//animacionPersonaje.Draw(animShader);		
+		
+		
+		//apagada animación
+
+
+
+
+
 		glBindVertexArray(0);
 
 
@@ -835,15 +878,57 @@ void animacion()
 		}
 	}
 
+
+void animarPuerta() {//0 a -90
+	if (puerta) {
+		if (edo1)
+		{
+			printf("Entramos edo1");
+			rotPuerta -= 5;
+			if (rotPuerta < -90.0)
+			{
+				edo1 = false;
+				edo2= true;
+				puerta = false;
+				rotPuerta = -90;
+			}
+
+			printf("Avanzamos: X:%f Z: %f\n", posCajaX, posCajaZ);
+
+		}
+		if (edo2)
+		{
+			rotPuerta += 5;
+			if (rotPuerta > 0.0)
+			{
+				edo2 = false;
+				edo1 = true;
+				puerta = false;
+				rotPuerta = 0;
+			}
+
+			//printf("Avanzamos: %f", posCajaZ);
+			printf("Avanzamos: X:%f Z: %f\n", posCajaX, posCajaZ);
+		}
+	}
+
+}
 void animacionCaja()
 {
 
 	//Movimiento de la caja
-	if (circuito)//X  de 0 a 1.4799
+	if (circuito)//X  de 0 a 1.4799 Z de 0 a 3.05
 	{
+		//M = (1.4799 - 0)/ (3.05 - 0) = 0.4852
+		//angulo = tan = x/z = 0.4852 = 25.8826
+		//Si deltaX = 0.01 
+		//Y M = 0.4852 = deltaX/deltaZ
+		// deltaZ = 0.01/M = 0.0206
+
 		if (recorrido1)
 		{
-			posCajaZ += 0.01;
+			posCajaZ += 0.0206;
+			posCajaX += 0.01;
 			if (posCajaZ>3.05)
 			{
 				recorrido1 = false;
@@ -868,7 +953,7 @@ void animacionCaja()
 		if (recorrido3)
 		{
 			posCajaZ -= 0.01;
-			if (posCajaZ < -0.5199)
+			if (posCajaZ < 0)
 			{
 				recorrido3 = false;
 				recorrido4 = true;
@@ -1028,6 +1113,11 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 		aspas = true;
 		printf("AnimacionAspas");
 	}
+	if (keys[GLFW_KEY_F])
+	{
+		puerta =  !puerta;
+		printf("InicioPuerta");
+	}
 }
 
 void MouseCallback(GLFWwindow *window, double xPos, double yPos)
@@ -1056,14 +1146,14 @@ void DoMovement()
 	if (keys[GLFW_KEY_1])
 	{
 
-		rotReloj+= 0.5;
-		printf("Subiendo rotReloj %f\n ", rotReloj);
+		rotPuerta += 0.5;
+		printf("Subiendo rotPuerta %f\n ", rotPuerta);
 	}
 
 	if (keys[GLFW_KEY_2])
 	{
-		rotReloj -= 0.5;
-		printf("Bajando rotReloj %f\n", rotReloj);
+		rotPuerta -= 0.5;
+		printf("Bajando rotPuerta %f\n", rotPuerta);
 	}
 
 	if (keys[GLFW_KEY_3])
