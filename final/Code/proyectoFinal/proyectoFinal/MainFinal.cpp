@@ -32,6 +32,7 @@ void MouseCallback(GLFWwindow *window, double xPos, double yPos);
 void DoMovement();
 void animacion();
 void animacionCaja();
+void animacionReloj();
 
 // Window dimensions
 const GLuint WIDTH = 800, HEIGHT = 600;
@@ -59,9 +60,21 @@ float rotOjo = 0.0f;
 float sentidoOjo = true;
 float posCajaZ = 0.0f;
 float posCajaX = 0.0f;
+//reloj
 float rotReloj = 0.0f;
+float rotRelojInv = 0.0f;
 float scaReloj = 0.0f;
-float trasRelojZ = 0.0f;
+float transRelojZ = 0.0f;
+float transRelojY = 0.0f;
+float deltasReloj = 0.005f;
+bool aspas = false;
+bool recRel0 = true;
+bool recRel1 = false;
+bool recRel2 = false;
+int contVueltas = 0;
+
+
+
 
 // Light attributes
 glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
@@ -442,6 +455,7 @@ int main()
 		DoMovement();
 		animacion();
 		animacionCaja();
+		animacionReloj();
 
 		// Clear the colorbuffer
 		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
@@ -573,7 +587,7 @@ int main()
 		//centroReloj
 		view = camera.GetViewMatrix();
 		model = glm::mat4(1);//seteamos la matriz
-		tmp1 = model = glm::translate(model, glm::vec3(-1.6844f, 11.5547f, -9.3084f));//-1.6844 11.5547  -9.3084
+		tmp1 = model = glm::translate(model, glm::vec3(-1.6844f, 11.5547f+transRelojY, -9.3084f+transRelojZ));//-1.6844 11.5547  -9.3084
 		tmp2 = model;
 		model = glm::scale(model, glm::vec3(1.0f + (scaReloj* 0.1f)));
 		//tmp = model = glm::translate(model, glm::vec3(0.0f,0.0f,0.0f));
@@ -585,13 +599,13 @@ int main()
 		model = tmp2;
 		model = glm::rotate(model, glm::radians(rotReloj), glm::vec3(0.0f, 0.0f, 1.0f));
 		model = glm::scale(model, glm::vec3(1.0f + (scaReloj*0.1f)));
-		model = glm::translate(model, glm::vec3(0.0f, 0.4027f, +0.0371f));//-1.6844  11.9574  -9.3455
+		model = glm::translate(model, glm::vec3(0.0f, 0.4027f , +0.0371f));//-1.6844  11.9574  -9.3455
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		relojMin.Draw(lightingShader);
 
 		//relojHor
 		model = tmp1;
-		model = glm::rotate(model, glm::radians(rotReloj), glm::vec3(0.0f, 0.0f, 1.0f));
+		model = glm::rotate(model, glm::radians(rotRelojInv), glm::vec3(0.0f, 0.0f, 1.0f));
 		model = glm::scale(model, glm::vec3(1.0f + (scaReloj * 0.1f)));
 		model = glm::translate(model, glm::vec3(0.163f, -0.2941f, -0.0371f));//-1.5214   11.2606   -9.3455
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -890,6 +904,59 @@ void animacionCaja()
 		}
 	}
 }
+void animacionReloj()
+{
+	//Movimiento del reloj
+	if (aspas)//X  de 0 a 1.4799
+	{
+		if (recRel0) {
+			contVueltas += 1;
+			rotReloj += 1+(contVueltas/900);
+			rotRelojInv -=.5 + (contVueltas / 900);
+			if (contVueltas > 900) {
+				recRel1 = true;
+				recRel0 = false;
+			}
+		}
+		if (recRel1)
+		{
+			transRelojZ += deltasReloj;
+			scaReloj += deltasReloj;
+			rotReloj += 2;
+			rotRelojInv -= 1.5;
+			if (transRelojZ > 25)
+			{
+				recRel1 = false;
+				recRel2 = true;
+			}
+
+			printf("Avanzamos:Z: %f\n",transRelojZ);
+
+		}
+		if (recRel2)
+		{
+			transRelojZ += deltasReloj*2;
+			transRelojY += deltasReloj*2.001;
+			scaReloj += deltasReloj*deltasReloj;
+			rotReloj += 3;
+			rotRelojInv -= 2.5;
+			if (transRelojZ > 50)
+			{
+				recRel2 = false;
+				recRel0 = true;
+				aspas = false;
+				transRelojZ = 0;
+				transRelojY = 0;
+				rotReloj = 0;
+				rotRelojInv = 0;
+				scaReloj = 0;
+				contVueltas = 0;
+			}
+
+		}
+	}
+}
+
 
 
 // Is called whenever a key is pressed/released via GLFW
@@ -953,7 +1020,13 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 	if (keys[GLFW_KEY_C])
 	{
 		circuito = !circuito;
-		printf("Cambio estado animacion");
+		printf("AnimacionCaja");
+	}
+	
+	if (keys[GLFW_KEY_R])
+	{
+		aspas = true;
+		printf("AnimacionAspas");
 	}
 }
 
@@ -1003,6 +1076,35 @@ void DoMovement()
 	{
 		scaReloj -= 0.5;
 		printf("Bajando scaReloj %f\n", scaReloj);
+	}
+
+	if (keys[GLFW_KEY_5])
+	{
+		transRelojY += 0.05;
+		printf("Subiendo transRelojY %f\n", transRelojY);
+	}
+
+	if (keys[GLFW_KEY_6])
+	{
+		transRelojZ += 0.05;
+		printf("Subiendo transRelojZ %f\n", transRelojZ);
+	}
+	if (keys[GLFW_KEY_7])
+	{
+		transRelojZ -= 0.05;
+		printf("Bajando transRelojZ %f\n", transRelojZ);
+	}
+	if (keys[GLFW_KEY_Z])
+	{
+		transRelojY += deltasReloj * 1.0001;
+		transRelojZ += deltasReloj;
+		printf("Subiendo transRelojZ %f\n", transRelojZ);
+	}
+	if (keys[GLFW_KEY_X])
+	{
+		transRelojY -= deltasReloj *1.0001;
+		transRelojZ -= deltasReloj;
+		printf("Bajando transRelojZ %f\n", transRelojZ);
 	}
 
 
