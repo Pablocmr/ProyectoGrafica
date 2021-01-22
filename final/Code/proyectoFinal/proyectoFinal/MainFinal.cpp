@@ -940,8 +940,8 @@ void animacionCaja()
 		}
 		if (recorrido2)
 		{
-			posCajaX += 0.01;
-			if (posCajaX > 1.4799)
+			posCajaX -= 0.01;
+			if (posCajaX < 0)
 			{
 				recorrido2 = false;
 				recorrido3 = true;
@@ -956,7 +956,7 @@ void animacionCaja()
 			if (posCajaZ < 0)
 			{
 				recorrido3 = false;
-				recorrido4 = true;
+				recorrido1 = true;
 			}
 			//printf("Avanzamos: %f", posCajaZ);
 			printf("Avanzamos: X:%f Z: %f\n", posCajaX, posCajaZ);
