@@ -41,7 +41,7 @@ int SCREEN_WIDTH, SCREEN_HEIGHT;
 
 // Camera
 //Camera  camera(glm::vec3(-100.0f, 2.0f, -45.0f));
-Camera  camera(glm::vec3(0.0f, 0.0f, 0.0f));
+Camera  camera(glm::vec3(50.0f,10.0f, 40.0f));
 GLfloat lastX = WIDTH / 2.0;
 GLfloat lastY = HEIGHT / 2.0;
 bool keys[1024];
@@ -224,7 +224,7 @@ int main()
 
 	Shader lightingShader("Shaders/lighting.vs", "Shaders/lighting.frag");
 	Shader lampShader("Shaders/lamp.vs", "Shaders/lamp.frag");
-	Shader SkyBoxshader("Shaders/SkyBox.vs", "Shaders/SkyBox.frag");
+	//Shader SkyBoxshader("Shaders/SkyBox.vs", "Shaders/SkyBox.frag");
 	Shader animShader("Shaders/anim.vs", "Shaders/anim.frag");
 	
 	
@@ -252,8 +252,8 @@ int main()
 
 	//Modelo de animación
 	//ApagadoAnimacion
-	//ModelAnim animacionPersonaje("Animaciones/doctor/Thriller Part 3.dae");
-	//animacionPersonaje.initShaders(animShader.Program);
+	ModelAnim animacionPersonaje("Animaciones/doctor/Thriller Part 3.dae");
+	animacionPersonaje.initShaders(animShader.Program);
 
 	//Inicialización de KeyFrames
 	
@@ -428,25 +428,25 @@ int main()
 
 
 	//SkyBox
-	GLuint skyboxVBO, skyboxVAO;
-	glGenVertexArrays(1, &skyboxVAO);
-	glGenBuffers(1,&skyboxVBO);
-	glBindVertexArray(skyboxVAO);
-	glBindBuffer(GL_ARRAY_BUFFER, skyboxVBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(skyboxVertices),&skyboxVertices,GL_STATIC_DRAW);
-	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(0, 3, GL_FLOAT,GL_FALSE, 3 * sizeof(GLfloat), (GLvoid *)0);
+	//GLuint skyboxVBO, skyboxVAO;
+	//glGenVertexArrays(1, &skyboxVAO);
+	//glGenBuffers(1,&skyboxVBO);
+	//glBindVertexArray(skyboxVAO);
+	//glBindBuffer(GL_ARRAY_BUFFER, skyboxVBO);
+	//glBufferData(GL_ARRAY_BUFFER, sizeof(skyboxVertices),&skyboxVertices,GL_STATIC_DRAW);
+	//glEnableVertexAttribArray(0);
+	//glVertexAttribPointer(0, 3, GL_FLOAT,GL_FALSE, 3 * sizeof(GLfloat), (GLvoid *)0);
 
 	// Load textures
-	vector<const GLchar*> faces;
-	faces.push_back("SkyBox/right.tga");
-	faces.push_back("SkyBox/left.tga");
-	faces.push_back("SkyBox/top.tga");
-	faces.push_back("SkyBox/bottom.tga");
-	faces.push_back("SkyBox/back.tga");
-	faces.push_back("SkyBox/front.tga");
-	
-	GLuint cubemapTexture = TextureLoading::LoadCubemap(faces);
+	//vector<const GLchar*> faces;
+	//faces.push_back("SkyBox/right.tga");
+	//faces.push_back("SkyBox/left.tga");
+	//faces.push_back("SkyBox/top.tga");
+	//faces.push_back("SkyBox/bottom.tga");
+	//faces.push_back("SkyBox/back.tga");
+	//faces.push_back("SkyBox/front.tga");
+	//
+	//GLuint cubemapTexture = TextureLoading::LoadCubemap(faces);
 
 	glm::mat4 projection = glm::perspective(camera.GetZoom(), (GLfloat)SCREEN_WIDTH / (GLfloat)SCREEN_HEIGHT, 0.1f, 1000.0f);
 
@@ -734,27 +734,27 @@ int main()
 		/*_______________________________Personaje Animado___________________________*/
 		//ApagadoAnimacion
 		
-		//animShader.Use();
-		//modelLoc = glGetUniformLocation(animShader.Program, "model");
-		//viewLoc = glGetUniformLocation(animShader.Program, "view");
-		//projLoc = glGetUniformLocation(animShader.Program, "projection");
+		animShader.Use();
+		modelLoc = glGetUniformLocation(animShader.Program, "model");
+		viewLoc = glGetUniformLocation(animShader.Program, "view");
+		projLoc = glGetUniformLocation(animShader.Program, "projection");
 
-		//glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
-		//glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
+		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+		glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
 
-		//glUniform3f(glGetUniformLocation(animShader.Program, "material.specular"), 0.5f, 0.5f, 0.5f);
-		//glUniform1f(glGetUniformLocation(animShader.Program, "material.shininess"), 32.0f);
-		//glUniform3f(glGetUniformLocation(animShader.Program, "light.ambient"), 1.0f, 1.0f, 1.0f);
-		//glUniform3f(glGetUniformLocation(animShader.Program, "light.diffuse"), 1.0f, 1.0f, 1.0f);
-		//glUniform3f(glGetUniformLocation(animShader.Program, "light.specular"), 0.5f, 0.5f, 0.5f);
-		//glUniform3f(glGetUniformLocation(animShader.Program, "light.direction"),0.0f, -1.0f, -1.0f);
-		//view = camera.GetViewMatrix();
+		glUniform3f(glGetUniformLocation(animShader.Program, "material.specular"), 0.5f, 0.5f, 0.5f);
+		glUniform1f(glGetUniformLocation(animShader.Program, "material.shininess"), 32.0f);
+		glUniform3f(glGetUniformLocation(animShader.Program, "light.ambient"), 1.0f, 1.0f, 1.0f);
+		glUniform3f(glGetUniformLocation(animShader.Program, "light.diffuse"), 1.0f, 1.0f, 1.0f);
+		glUniform3f(glGetUniformLocation(animShader.Program, "light.specular"), 0.5f, 0.5f, 0.5f);
+		glUniform3f(glGetUniformLocation(animShader.Program, "light.direction"),0.0f, -1.0f, -1.0f);
+		view = camera.GetViewMatrix();
 
-		//model = glm::mat4(1);
-		//model = glm::translate(model, glm::vec3(0,.5,40));
-		//model = glm::scale(model, glm::vec3(0.02f));	// it's a bit too big for our scene, so scale it down
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//animacionPersonaje.Draw(animShader);		
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0,1.5,40));
+		model = glm::scale(model, glm::vec3(0.05f));	// it's a bit too big for our scene, so scale it down
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		animacionPersonaje.Draw(animShader);		
 		
 		
 		//apagada animación
@@ -799,20 +799,20 @@ int main()
 		glBindVertexArray(0);
 
 
-		// Draw skybox as last
-		glDepthFunc(GL_LEQUAL);  // Change depth function so depth test passes when values are equal to depth buffer's content
-		SkyBoxshader.Use();
-		view = glm::mat4(glm::mat3(camera.GetViewMatrix()));	// Remove any translation component of the view matrix
-		glUniformMatrix4fv(glGetUniformLocation(SkyBoxshader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
-		glUniformMatrix4fv(glGetUniformLocation(SkyBoxshader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
+		//// Draw skybox as last
+		//glDepthFunc(GL_LEQUAL);  // Change depth function so depth test passes when values are equal to depth buffer's content
+		//SkyBoxshader.Use();
+		//view = glm::mat4(glm::mat3(camera.GetViewMatrix()));	// Remove any translation component of the view matrix
+		//glUniformMatrix4fv(glGetUniformLocation(SkyBoxshader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
+		//glUniformMatrix4fv(glGetUniformLocation(SkyBoxshader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 
-		// skybox cube
-		glBindVertexArray(skyboxVAO);
-		glActiveTexture(GL_TEXTURE1);
-		glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
-		glDrawArrays(GL_TRIANGLES, 0, 36);
-		glBindVertexArray(0);
-		glDepthFunc(GL_LESS); // Set depth function back to default
+		//// skybox cube
+		//glBindVertexArray(skyboxVAO);
+		//glActiveTexture(GL_TEXTURE1);
+		//glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
+		//glDrawArrays(GL_TRIANGLES, 0, 36);
+		//glBindVertexArray(0);
+		//glDepthFunc(GL_LESS); // Set depth function back to default
 
 
 
@@ -828,8 +828,8 @@ int main()
 	glDeleteVertexArrays(1, &lightVAO);
 	glDeleteBuffers(1, &VBO);
 	glDeleteBuffers(1, &EBO);
-	glDeleteVertexArrays(1, &skyboxVAO);
-	glDeleteBuffers(1, &skyboxVBO);
+	//glDeleteVertexArrays(1, &skyboxVAO);
+	//glDeleteBuffers(1, &skyboxVBO);
 	// Terminate GLFW, clearing any resources allocated by GLFW.
 	glfwTerminate();
 
