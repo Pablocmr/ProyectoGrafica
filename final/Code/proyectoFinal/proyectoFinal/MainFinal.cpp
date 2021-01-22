@@ -250,12 +250,12 @@ int main()
 	// Build and compile our shader program
 
 
-	//Modelo de animación
+	//Modelo de animaciï¿½n
 	//ApagadoAnimacion
 	ModelAnim animacionPersonaje("Animaciones/doctor/Thriller Part 3.dae");
 	animacionPersonaje.initShaders(animShader.Program);
 
-	//Inicialización de KeyFrames
+	//Inicializaciï¿½n de KeyFrames
 	
 	for(int i=0; i<MAX_FRAMES; i++)
 	{
@@ -757,7 +757,7 @@ int main()
 		animacionPersonaje.Draw(animShader);		
 		
 		
-		//apagada animación
+		//apagada animaciï¿½n
 
 
 
@@ -1020,7 +1020,7 @@ void animacionReloj()
 		}
 		if (recRel2)
 		{
-			transRelojZ += deltasReloj*2;
+			transRelojZ += deltasReloj;
 			transRelojY += deltasReloj*2.001;
 			scaReloj += 0.05f * 0.05f;
 			rotReloj += 15;
